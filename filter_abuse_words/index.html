@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Application</title>
+</head>
+
+<body ng-app="FilterApp" ng-cloak>
+    <section class="wrapper" ng-controller="FilterController">
+        <span>Enter words here:</span>
+        <input type="text" class="text-input" 
+            placeholder="words..." 
+            ng-model="inputWord"          
+            ng-change="checkWordsForAbuses()">
+        <em>Try Hell, Screw, Shit, Damn, Bloody...</em>
+        <p ng-if="hideError">Do not enter abusive words...</p>
+
+        <!--ng-model-options="{ debounce: 2000 }"-->
+    </section>
+</body>
+
+</html>
