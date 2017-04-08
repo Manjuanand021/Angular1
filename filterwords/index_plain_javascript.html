@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Disable Submit on entering abuses</title>
+</head>
+
+<body>
+    <section class="wrapper">
+        <form action="">
+            <div>
+                <label for="GET-name">Enter words here:</label>
+                <input id="txtWord" type="text" name="name" class="input-text" placeholder="words...">
+                <!--ng-model="inputWord" ng-blur="checkWordsForAbuses()"-->
+                <input type="submit" value="Submit" class="btn-submit">
+            </div>
+            <em>Try Hell, Screw, Shit, Damn, Bloody...</em>
+            <p id="error-text">Do not enter abusive words...</p>
+        </form>
+    </section>
+</body>
+
+</html>
