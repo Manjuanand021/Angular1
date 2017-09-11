@@ -1,12 +1,14 @@
 var path = require('path'),
     optimize = require('webpack').optimize,
     htmlWebpackPlugin = require('html-webpack-plugin'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin');
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
 module.exports = {
     context: __dirname + '/app',
     entry: {
         app: '../main.js',
+        plain_javascript: '../plain_javascript.js',
         vendor: ['angular']
     },
     output: {
@@ -31,14 +33,27 @@ module.exports = {
             name: 'vendor'
         }),
         new ExtractTextPlugin({
-            filename: "./[name].bundle.css",
+            filename: "./style.bundle.css",
             disable: false,
             allChunks: true
         }),
         new htmlWebpackPlugin({
             template: '../index.html',
             //Cache busting
+            hash: true,
+            excludeChunks: ['plain_javascript']
+        }),
+        new htmlWebpackPlugin({
+            template: '../index_plain_javascript.html',
+            filename: 'index_plain_javascript.html',
             hash: true
+            // excludeChunks: ['app', 'vendor']
         })
+        // new HtmlWebpackIncludeAssetsPlugin({
+        //     files: ['../index_plain_javascript.html'],
+        //     assets: ['./build/style.bundle.css'],
+        //     append: true,
+        //     hash: true
+        // })
     ]
 }

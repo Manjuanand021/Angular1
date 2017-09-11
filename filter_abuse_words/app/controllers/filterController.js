@@ -3,21 +3,18 @@
 FilterController.$inject = ['$scope', 'FilterService'];
 
 function FilterController(scope, filterService) {
-    var abusiveWords = [
-        "Hell",
-        "Screw",
-        "Bloody",
-        "Shit",
-        "Damn"
-    ];
+    var abusiveWords;
     scope.hideError = false;
-    scope.name = filterService.getName();
     scope.inputWord = '';
+    scope.disableSubmit = true;
+
+    abusiveWords = filterService.getAbusiveWords();
     scope.checkWordsForAbuses = function () {
-        if (abusiveWords.indexOf(scope.inputWord) !== -1)
-            scope.hideError = true;
-        else
-            scope.hideError = false;
+        if (scope.inputWord !== '') {
+            scope.disableSubmit = scope.hideError =
+                abusiveWords.indexOf(scope.inputWord) !== -1 ? true : false;
+        } else
+            scope.disableSubmit = true;
     }
 }
 

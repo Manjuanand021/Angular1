@@ -1,8 +1,14 @@
 function FilterService() {
     var name = 'Manjuanand';
     return {
-        getName: function () {
-            return name;
+        getAbusiveWords: function () {
+            return [
+                "Hell",
+                "Screw",
+                "Bloody",
+                "Shit",
+                "Damn"
+            ];;
         }
     }
 }

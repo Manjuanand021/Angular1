@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Application</title>
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x- ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body ng-app="PredictiveSearchApp" ng-cloak>
+    <section class="wrapper" ng-controller="PredictiveSearchController">
+        <div>
+            <label for="txtName">Enter keywords here:</label>
+            <input id="txtSearch" name="txtSearch" type="text" placeholder="try predictive keywords...." ng-model-options="{debounce: 1000}"
+                ng-change="getWikiSearchResults()" class="input-text" ng-class="{'loading' : processing}" ng-model="inputWord">
+        </div>
+        <div class="suggestions">
+            <a href="#"></a> <span ng-repeat="result in searchResults">
+            {{result}}</span>
+        </div>
+    </section>
+</body>
+
+</html>

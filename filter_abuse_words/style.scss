@@ -1,7 +1,7 @@
 //colors
 $color_fuscous_gray_approx: #424242;
 $color_black_haze_approx: #f7f7f7;
-$color_pattens_blue_approx: #e3f2fd;
+$color_pattens_blue_approx: #CFD8DC;
 $white: #fff;
 $color_pomegranate_approx: #e64a19;
 //fonts
@@ -23,22 +23,27 @@ body {
     margin: 0 auto;
     background-color: $color_black_haze_approx;
     border-radius: 5px;
-}
-
-input {
-    border: 1px solid $color_pattens_blue_approx;
-    background-color: $white;
-    padding: 12px 15px;
-    margin-right: 10px;
-    border-radius: 5px;
-    transition: border 0.3s;
-    width: 250px;
-}
-
-p {
-    color: $color_pomegranate_approx;
-}
-
-em {
-    font-size: 14px;
+    .input-text {
+        border: 1px solid $color_pattens_blue_approx;
+        background-color: $white;
+        padding: 12px 15px;
+        margin-right: 10px;
+        border-radius: 5px;
+        transition: border 0.3s;
+        width: 250px;
+    }
+    .btn-submit {
+        padding: 10px;
+        border-radius: 5px;
+        background-color: $color_black_haze_approx;
+        border: 1px solid $color_pattens_blue_approx;
+    }
+    p {
+        color: $color_pomegranate_approx;
+    }
+    em {
+        font-size: 14px;
+        position: relative;
+        top: 5px;
+    }
 }

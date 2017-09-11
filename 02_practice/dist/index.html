@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        <%=htmlWebpackPlugin.options.title%>
+    </title>
+</head>
+
+<body ng-controller="mainCtrl as ctrl">
+    <h1>
+        {{ctrl.appName}}
+    </h1>
+    <h3>
+        {{ctrl.appDesc}}
+    </h3>
+    <div ng-repeat="sup in ctrl.sups">
+        <b>{{sup}}</b>
+    </div>
+    <div ng-view></div>
+<script type="text/javascript" src="runtime.d487e68f6cb37f28a5d7.bundle.js?1afaa842937b6e13e684"></script><script type="text/javascript" src="vendor.e24abb72e2030bf1c538.bundle.js?1afaa842937b6e13e684"></script><script type="text/javascript" src="main.c502db1e00f60068aa7e.bundle.js?1afaa842937b6e13e684"></script></body>
+
+</html>

@@ -1,0 +1,10 @@
+<!--<div ng-controller="partial2Controller">-->
+<div>
+    <h4>{{msg}}</h4>
+    <button type="button" ng-click="relaodRoute()">Reload routes</button>
+    <input type="text" name="txtNumbers" value="" ng-model="numbers">
+    <only-numbers lol="{{numbers}}"></only-numbers>
+    <div ng-repeat="user in users">
+        <p>{{user.username}}</p>
+    </div>
+</div>
